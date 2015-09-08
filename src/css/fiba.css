@@ -1,6 +1,12 @@
 body {
   padding-top: 50px;
 }
+mark {
+  background-color: #5bc0de;
+}
 .carousel {
   padding: 0;
+}
+p.intro-text {
+  line-height: 200%;
 }
