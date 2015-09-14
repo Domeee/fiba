@@ -1,8 +1,11 @@
 body {
   padding-top: 50px;
 }
+footer {
+  color: #fff;
+  background-color: #000099;  
+}
 mark {
-  /*background-color: #5bc0de;*/
   color: #fff;
   background-color: #000099;
 }
@@ -22,7 +25,6 @@ mark {
   font-weight: bold;
 }
 .jumbotron {
-  margin-bottom: 60px;
   background-color: #fff;
 }
 .carousel {
@@ -39,7 +41,32 @@ p.intro-text {
   color: #000099;
   font-size: 16pt;
   font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 60px;
+}
+.fiba-header h3 {
+  margin-top: 10px;
+}
+.fiba-header-contact {
+  background-color: #EEEEEE;
+  color: #000099;
+  font-size: 16pt;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0;
 }
 .fiba-content {
   margin-bottom: 30px;
+}
+.fiba-content-contact {
+  margin: 0;
+  padding: 0;
+}
+.fiba-welcome {
+  padding-bottom: 0;
+}
+.fiba-contact {
+  padding: 0;
 }
