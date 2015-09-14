@@ -12,6 +12,7 @@
   <!-- Bootstrap -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+  <link href="css/nanogallery.min.css" rel="stylesheet" type="text/css">
   <link href="css/fiba.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -171,59 +172,6 @@
 
   <div class="jumbotron  fiba-header">
     <div class="container">
-      <h4>produkte (SOLL)</h4>
-    </div>
-  </div>
-
-  <div class="container fiba-content">
-    <div class="row">
-      <div class="row">
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-        <div class="col-xs-6 col-md-3  gallery-row">
-          <img src="http://placehold.it/200x150" class="img-responsive">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="jumbotron  fiba-header">
-    <div class="container">
       <h4>produkte</h4>
     </div>
   </div>
@@ -231,7 +179,7 @@
   <div class="container fiba-content">
     <div class="row">
       <div class="col-md-12">
-
+        <div id="nanoGallery1"></div>
       </div>
     </div>
   </div>
@@ -245,17 +193,41 @@
   <div class="container fiba-content">
     <div class="row">
       <div class="col-md-12">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+        sit amet.
       </div>
     </div>
   </div>
 
-
   <!-- Bootstrap core JavaScript -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <!--<script src="/js/bootstrap.min.js"></script>-->
-</body>
+  <script type="text/javascript" src="js/jquery.nanogallery.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#nanoGallery1").nanoGallery({
+          kind: 'flickr',
+          userID: '134427604@N05',
+          thumbnailGutterWidth: 40,
+          thumbnailGutterHeight: 40,
+          thumbnailLabel:{ hideIcons: true },
+          breadcrumbAutoHideTopLevel: true,
+          albumSorting: 'titleAsc',
+          photoSorting: 'titleAsc',
+          colorScheme: 'light',
+          i18n: {
+            breadcrumbHome: 'fiba Metallbau GmbH', breadcrumbHome: 'fiba Metallbau GmbH', breadcrumbHome: 'fiba Metallbau GmbH'
+        }
+      });
+  });
+  </script>
+
 </body>
 
 </html>
