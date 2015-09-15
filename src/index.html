@@ -10,8 +10,7 @@
   <meta name="author" content="">
   <title>Fiba Metallbau GmbH</title>
   <!-- Bootstrap -->
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/nanogallery.min.css" rel="stylesheet" type="text/css">
   <link href="css/fiba.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -49,7 +48,6 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <!--<p><img src="img/fiba.jpg"></p>-->
           <h1>fiba Metallbau GmbH</h1>
           <p class="intro-text">Ihr Partner für
             <mark>Autounterstände</mark>,
@@ -200,13 +198,11 @@
     test
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
   <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <!--<script src="/js/bootstrap.min.js"></script>-->
+  <script src="/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/jquery.nanogallery.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1A4IPgz-UOGBRHy6iRxyqCDSl6GSUtcw&signed_in=true&libraries=places&callback=init" async defer></script>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1A4IPgz-UOGBRHy6iRxyqCDSl6GSUtcw&signed_in=true&libraries=places&callback=init"
+  async defer></script>
 
   <script type="text/javascript">
     $(document).ready(function () {
@@ -228,6 +224,30 @@
   </script>
 
   <script>
+    var fiba = {lat: 47.662642, lng: 8.701172};
+    
+    function CenterControl(controlDiv, map) {
+    
+      var controlUI = document.createElement('div');
+      controlUI.style.backgroundColor = '#fff';
+      controlUI.style.border = '2px solid #fff';
+      controlUI.style.borderRadius = '3px';
+      controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+      controlUI.style.cursor = 'pointer';
+      controlUI.style.marginRight = '30%';
+      controlUI.title = 'fiba Metallbau GmbH anzeigen';
+      controlDiv.appendChild(controlUI);
+    
+      var controlText = document.createElement('div');
+      controlText.style.paddingLeft = '5px';
+      controlText.style.paddingRight = '5px';
+      controlText.innerHTML = '<p><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;fiba Metallbau GmbH</p><p><span class="glyphicon glyphicon-pencil fiba-hide" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;Schulweg 5</p><p><span class="glyphicon glyphicon-pencil fiba-hide" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;8252 Schlatt</p><p><span class="glyphicon glyphicon glyphicon-earphone" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;<a href="tel:+41526573588">+41 52 657 35 88</a></p><p><span class="glyphicon glyphicon glyphicon-print" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;<a href="fax:+41526571143">+41 52 657 11 43 (Fax)</a></p><p><span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#x69;&#x6e;&#102;&#x6f;&#x40;&#x66;&#105;&#x62;&#97;&#109;&#101;&#x74;&#97;&#x6c;&#108;&#x62;&#97;&#117;&#x2e;&#99;&#x68;">fiba E-Mail</a></p><p><span class="glyphicon glyphicon-road" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;<a href="https://www.google.ch/maps/dir//fiba+Metallbau+GmbH,+Schulweg+5,+8252+Schlatt,+Schweiz/@47.662642,8.701172,17z/data=!4m12!1m3!3m2!1s0x479a83dd1ea169e7:0x8e86e8a505ef31bd!2sfiba+Metallbau+GmbH!4m7!1m0!1m5!1m1!1s0x479a83dd1ea169e7:0x8e86e8a505ef31bd!2m2!1d8.701172!2d47.662642?hl=de" target="_blank">Routenplaner mit Google Maps (öffnet in neuem Fenster)</a></p>';
+      controlUI.appendChild(controlText);
+    
+      controlUI.addEventListener('click', function() {
+        map.setCenter(fiba);
+      });
+    }
     
     function init() {
       
@@ -236,46 +256,28 @@
       var mapCanvas = document.getElementById('map');
       
       var mapOptions = {
-        center: new google.maps.LatLng(47.662642, 8.701172),
+        center: fiba,
         zoom: 12,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false
         };
       
       map = new google.maps.Map(mapCanvas, mapOptions);
-       
-      // var marker = new google.maps.Marker({
-      //   position: {lat: 47.662642, lng: 8.701172},
-      //   map: map});
-         
-      var request = {
-        location: map.getCenter(),
-        radius: '500',
-        query: 'fiba Metallbau GmbH'
-        };
-        
-      var service = new google.maps.places.PlacesService(map);
-      service.textSearch(request, callback);
-    };
+      
+      var marker = new google.maps.Marker({
+        position: fiba,
+        map: map,
+        title: 'fiba Metallbau GmbH'
+        });
+      
+      var centerControlDiv = document.createElement('div');
+      var centerControl = new CenterControl(centerControlDiv, map);
     
-    // Checks that the PlacesServiceStatus is OK, and adds a marker
-    // using the place ID and location from the PlacesService.
-    function callback(results, status) {
-      if (status == google.maps.places.PlacesServiceStatus.OK) {
-        var marker = new google.maps.Marker({
-          map: map,
-          place: {
-            placeId: results[0].place_id,
-            location: results[0].geometry.location
-            }
-          });
-        }
-      }
-    
-    google.maps.event.addDomListener(window, 'load', init);
-    
+      centerControlDiv.index = 1;
+      map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(centerControlDiv);
+    }
+  
   </script>
-
 
 </body>
 
