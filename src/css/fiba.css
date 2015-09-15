@@ -2,6 +2,8 @@ body {
   padding-top: 50px;
 }
 footer {
+  min-height: 60px;
+  padding-top: 15px;
   color: #fff;
   background-color: #000099;  
 }
@@ -11,18 +13,54 @@ mark {
 }
 .navbar-inverse {
   background-color: #000099;
-  border: 0;
+}
+.navbar-brand:link {
+  font-weight: 800;
+  text-decoration: none;
+  background-color: #fff;
+  color: #D40D12;
+}
+.navbar-brand:visited {
+  font-weight: 800;
+  text-decoration: none;
+  background-color: #fff;
+  color: #D40D12;
+}
+.navbar-brand:hover {
+  font-weight: 800;
+  text-decoration: none;
+  background-color: #fff;
+  color: #D40D12;
+}
+.navbar-brand:active {
+  font-weight: 800;
+  text-decoration: none;
+  background-color: #fff;
+  color: #D40D12;
 }
 .navbar-brand {
   background-color: #fff;
 }
-.navbar-inverse .navbar-brand {
-  font-weight: 800;
-  color: #D40D12;
+.navbar-inverse {
+  border: 0;
 }
-.navbar-inverse .navbar-nav > li > a {
+.navbar-inverse .navbar-nav > li > a:link {
   color: #fff;
   font-weight: bold;
+}
+.navbar-inverse .navbar-nav > li > a:visited {
+  color: #fff;
+  font-weight: bold;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #fff;
+  font-weight: bold;
+  color: #D40D12;
+}
+.navbar-inverse .navbar-nav > li > a:active {
+  color: #fff;
+  font-weight: bold;
+  color: #D40D12;
 }
 .jumbotron {
   background-color: #fff;
@@ -57,6 +95,9 @@ p.intro-text {
   padding-bottom: 12px;
   margin: 0;
 }
+.fiba-header-contact h3 {
+  margin-top: 10px;
+}
 .fiba-content {
   margin-bottom: 30px;
 }
@@ -87,4 +128,24 @@ p.intro-text {
 }
 .fiba-hide {
   visibility: hidden;
+}
+#nav-contact {
+  font-size: 12px;
+  color: #fff;
+}
+#nav-contact a:link {
+  color: #fff;
+  text-decoration: none;
+}
+#nav-contact a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+#nav-contact a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+#nav-contact a:active {
+  color: #ffff00;
+  text-decoration: underline;
 }
