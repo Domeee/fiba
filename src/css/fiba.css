@@ -69,6 +69,7 @@ mark {
   padding: 0;
 }
 p.intro-text {
+  margin-top: 20px;
   line-height: 200%;
 }
 .gallery-row {
@@ -148,4 +149,12 @@ p.intro-text {
 #nav-contact a:active {
   color: #ffff00;
   text-decoration: underline;
+}
+
+.logo_am_suisse {
+  max-height: 100px;
+}
+
+.logo_am_suisse_link {
+  margin-bottom: 20px;
 }
